@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="unitConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="asphalt-1868891_1280" translatesAutoresizingMaskIntoConstraints="NO" id="TNk-HZ-7ca">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set your distance" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N5D-MM-9ST">
+                                <rect key="frame" x="121.5" y="159" width="171" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 kilometers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYX-Lk-ICH">
+                                <rect key="frame" x="121" y="429.5" width="172.5" height="37"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-eE-cwy" customClass="CustomButton" customModule="unitConverter" customModuleProvider="target">
+                                <rect key="frame" x="121.5" y="370.5" width="171" height="34"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="convert"/>
+                                <connections>
+                                    <action selector="convertBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKn-H3-NEv"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="81B-EC-mR3" customClass="CustomSegmentededControl" customModule="unitConverter" customModuleProvider="target">
+                                <rect key="frame" x="121.5" y="218" width="171" height="32"/>
+                                <segments>
+                                    <segment title="Kilometers"/>
+                                    <segment title="Miles"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N5D-MM-9ST" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="69d-Ls-zid"/>
+                            <constraint firstItem="81B-EC-mR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D6Q-9h-6eK"/>
+                            <constraint firstItem="N5D-MM-9ST" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="HTA-k3-J7F"/>
+                            <constraint firstItem="GaZ-eE-cwy" firstAttribute="leading" secondItem="81B-EC-mR3" secondAttribute="leading" id="LmG-V1-FCt"/>
+                            <constraint firstItem="GaZ-eE-cwy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QL8-sk-TNy"/>
+                            <constraint firstItem="N5D-MM-9ST" firstAttribute="width" secondItem="81B-EC-mR3" secondAttribute="width" id="YYb-kr-qWM"/>
+                            <constraint firstItem="81B-EC-mR3" firstAttribute="top" secondItem="N5D-MM-9ST" secondAttribute="bottom" constant="25" id="a2x-2q-HzV"/>
+                            <constraint firstItem="kYX-Lk-ICH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ep8-LB-ELF"/>
+                            <constraint firstItem="kYX-Lk-ICH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fhf-zq-dqg"/>
+                            <constraint firstItem="GaZ-eE-cwy" firstAttribute="trailing" secondItem="81B-EC-mR3" secondAttribute="trailing" id="sd4-ZW-jAE"/>
+                            <constraint firstItem="kYX-Lk-ICH" firstAttribute="top" secondItem="GaZ-eE-cwy" secondAttribute="bottom" constant="25" id="v8t-J4-a9T"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distanceTxtFld" destination="N5D-MM-9ST" id="3oO-cW-xnT"/>
+                        <outlet property="resultLbl" destination="kYX-Lk-ICH" id="26c-T9-5ub"/>
+                        <outlet property="unitSelector" destination="81B-EC-mR3" id="baw-F4-CKt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="81B-EC-mR3">
+            <size key="intrinsicContentSize" width="171" height="31"/>
+        </designable>
+        <designable name="GaZ-eE-cwy">
+            <size key="intrinsicContentSize" width="55" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="asphalt-1868891_1280" width="640" height="426.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

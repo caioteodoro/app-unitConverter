@@ -8,14 +8,25 @@
 
 import UIKit
 
+@IBDesignable
+
 class CustomButton: UIButton {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func prepareForInterfaceBuilder() {
+        customizeView()
     }
-    */
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        customizeView()
+    }
 
+    func customizeView(){
+    layer.backgroundColor = #colorLiteral(red: 0.2142163212, green: 0.2142163212, blue: 0.2142163212, alpha: 0.4039942782)
+    layer.cornerRadius = 5.0
+    setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+    layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    layer.borderWidth = 2.0
+    }
+    
 }

@@ -8,14 +8,20 @@
 
 import UIKit
 
+@IBDesignable
+
 class CustomSegmentededControl: UISegmentedControl {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+        override func prepareForInterfaceBuilder() {
+            customizeView()
+        }
+        
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            customizeView()
+        }
 
+        func customizeView(){
+            setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        }
 }
